@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from keras import models
 
-model = models.load_model(r'save_NH_2/CCNN.h5')
+model = models.load_model(r'save_NH/CCNN_NH.h5')
 # Se configuran los parámetros de la pantalla
 # a mostrar para el operador.
 opt = {
@@ -27,7 +27,7 @@ while True:
 
     im = Image.fromarray(frames, 'RGB')
 
-    #Resizing into 180x180 because we trained the model with this image size.
+    #Resizing into 128x128 because we trained the model with this image size.
     im = im.resize((180,180))
     img_array = np.array(im)
     img_array = np.expand_dims(img_array, axis=0)
@@ -53,5 +53,4 @@ while True:
 # el uso del dispositivo (camara)
 cv2.destroyAllWindows()
 Obs.stop()
-
 

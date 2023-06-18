@@ -5,7 +5,10 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from keras import models
 
-model = models.load_model(r'save_NH_2/CCNN.h5')
+model1 = models.load_model(r'save_NH/CCNN_NH.h5')
+model2 = models.load_model(r'save_NH_2/CCNN.h5')
+model3 = models.load_model(r'save_NH_3/CCNN.h5')
+model4 = models.load_model(r'save_NH_5/CCNN.h5')
 # Se configuran los parámetros de la pantalla
 # a mostrar para el operador.
 opt = {
@@ -35,9 +38,13 @@ while True:
     if Obs is None:
         break
 
-    prediction = int(model.predict(img_array)[0][0])
+    prediction1 = int(model1.predict(img_array)[0][0])
+    prediction2 = int(model2.predict(img_array)[0][0])
+    prediction3 = int(model3.predict(img_array)[0][0])
+    prediction4 = int(model4.predict(img_array)[0][0])
+    
 
-    if prediction == 0:
+    if prediction1 or prediction2 or prediction3 or prediction4 == 0:
         frames = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
 
     cv2.imshow('Salida',frames)
@@ -53,5 +60,3 @@ while True:
 # el uso del dispositivo (camara)
 cv2.destroyAllWindows()
 Obs.stop()
-
-
