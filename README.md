@@ -10,4 +10,9 @@ Se presenta un listado con los diferentes códigos que se implementaron para rea
 
 4.- CT.py  ->  Es un código experimental para la comunicación entre un servidor web llamado Roboflow con cualquier usuario por medio de Python
 
-5.- MAPIMA.py  ->  
+5.- MAPIMA.py  ->  Busca mostrar el video que se obtiene por OpenCV e implementa por medio del archivo obtenido en CCNN.py una detección si cumple los parámetros requeridos, como son la rotación, inclinación y altura de la cámara. Para observar una detección el video mostrado cambiará de color GRAY a RGB
+
+6.- P#_Video.py -> Son los intentos para cambiar las rotaciones de las imágenes que genera el programa de CCNN.py para encontrar la rotación correcta.
+
+7.- PT_Video.py -> Es el resultado final encontrando la inclinación y rotación correcta.
+
